@@ -40,7 +40,7 @@ function BodyOnLoad() {
             area_bar = touchstart_bar-touchmove_bar;
             if(area_bar<0){//拡大する
                 ratio *= 1.1;
-                document.getElementById('test');
+                document.getElementById('test').innerHTML = '<a href="./kidou.html">移動</a>';
             }
             else if(area_bar>0){//縮小する
                 ratio *= 0.9;
@@ -54,7 +54,7 @@ function BodyOnLoad() {
 </script>
 </head>
 <body onLoad="BodyOnLoad()">
-<p id="test" >拡大</p>
+<p id="test" font size="1" >拡大</p>
 <p id="start"></p>
 <p id="move"></p>
 
