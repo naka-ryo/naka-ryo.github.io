@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="ja">
+<meta charset="UTF-8">
+<title>スマホのタッチイベントで画像の拡大・縮小・移動</title>
+ 
+<script>
+function BodyOnLoad() {
+    var ratio=1;
+    var w = document.getElementById('test').width;
+    var h = document.getElementById('test').height;
+ 
+    var touchstart_bar = 0;
+    var touchmove_bar = 0;
+    el = window;
+    //タッチの場合
+    el.addEventListener('touchstart',function(e){
+        touchstart_bar = 0;
+        touchmove_bar = 0;
+        if(e.touches.length > 1){
+            //絶対値を取得
+            w_abs_start = Math.abs(e.touches[1].pageX - e.touches[0].pageX);
+            h_abs_start = Math.abs(e.touches[1].pageY - e.touches[0].pageY);
+            //はじめに2本指タッチした時の面積
+            touchstart_bar = w_abs_start*h_abs_start;
+        }
+    },false);
+      
+    //ムーブの場合
+    el.addEventListener('touchmove', function(e) {
+        if(e.touches.length > 1){
+            //絶対値を取得
+            w_abs_move = Math.abs(e.touches[1].pageX - e.touches[0].pageX);
+            h_abs_move = Math.abs(e.touches[1].pageY - e.touches[0].pageY);
+            //ムーブした時の面積
+            touchmove_bar = w_abs_move*h_abs_move;
+            //はじめに2タッチ面積からムーブした時の面積を引く
+            area_bar = touchstart_bar-touchmove_bar;
+            if(area_bar<0){//拡大する
+                ratio *= 1.1;
+                getElementById('test').href= "https://www.google.co.jp" 
+            }
+            else if(area_bar>0){//縮小する
+                ratio *= 0.9;
+            }
+            document.getElementById('test').width = w*ratio;
+            document.getElementById('test').height = h*ratio;
+        }
+              
+    });
+}
+</script>
+</head>
+<body onLoad="BodyOnLoad()">
+<p id="test" >拡大</p>
+</body>
+</html>

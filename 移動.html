@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+
+
+<meta name="viewport" content="width=device-width,
+　initial-scale=1, maximum-scale=1">
+<style type="text/css">
+    <!--
+        p {
+    font-size: 30px;
+    text-align: center;
+}
+-->
+</style>
+
+<script type="text/javascript">
+var btn = 1;
+function escape() {
+  if(btn == 1) {
+    escape_btn.style.top = "120px";
+    escape_btn.style.left = "150px";
+  }
+  if(btn == 2) {
+    escape_btn.style.top = "100px";
+    escape_btn.style.left = "50px";
+  }
+  if(btn == 3) {
+    escape_btn.style.top = "100px";
+    escape_btn.style.left = "200px";
+  }
+  if(btn == 4) {
+    escape_btn.style.top = "200px";
+    escape_btn.style.left = "100px";
+  }
+  btn = btn + 1;
+  if(btn == 5) {
+    btn = 1;
+  }
+}
+</script>
+</head>
+<body>
+
+    <p>タップしてください</p>
+<DIV ID="escape_btn" style="position:absolute; left:250px; top:200px; width:50px; height:50px;">
+<FORM name=nobu1 action="クリック後開くページのファイル名 xxxx.html" method="POST">
+<INPUT type=submit  VALUE=" 次のページへ " onMouseover="escape()">
+</FORM>
+</DIV>
+
+</body>
+</html>
+
+      
