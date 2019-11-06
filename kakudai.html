@@ -35,6 +35,7 @@ function BodyOnLoad() {
             h_abs_move = Math.abs(e.touches[1].pageY - e.touches[0].pageY);
             //ムーブした時の面積
             touchmove_bar = w_abs_move*h_abs_move;
+            document.getElementById("move").innerText = `移動後の面積：${touchmove_bar}`;
             //はじめに2タッチ面積からムーブした時の面積を引く
             area_bar = touchstart_bar-touchmove_bar;
             if(area_bar<0){//拡大する
@@ -55,5 +56,7 @@ function BodyOnLoad() {
 <body onLoad="BodyOnLoad()">
 <p id="test" >拡大</p>
 <p id="start"></p>
+<p id="move"></p>
+
 </body>
 </html>
