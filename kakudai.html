@@ -23,6 +23,7 @@ function BodyOnLoad() {
             h_abs_start = Math.abs(e.touches[1].pageY - e.touches[0].pageY);
             //はじめに2本指タッチした時の面積
             touchstart_bar = w_abs_start*h_abs_start;
+            document.getElementById("start").innerText = `最初の面積：${touchstart_bar}`;
         }
     },false);
       
@@ -38,7 +39,7 @@ function BodyOnLoad() {
             area_bar = touchstart_bar-touchmove_bar;
             if(area_bar<0){//拡大する
                 ratio *= 1.1;
-                getElementById('test').href= "https://www.google.co.jp" 
+                document.getElementById('test');
             }
             else if(area_bar>0){//縮小する
                 ratio *= 0.9;
@@ -53,5 +54,6 @@ function BodyOnLoad() {
 </head>
 <body onLoad="BodyOnLoad()">
 <p id="test" >拡大</p>
+<p id="start"></p>
 </body>
 </html>
