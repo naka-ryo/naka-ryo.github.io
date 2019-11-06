@@ -23,7 +23,7 @@ function BodyOnLoad() {
             h_abs_start = Math.abs(e.touches[1].pageY - e.touches[0].pageY);
             //はじめに2本指タッチした時の面積
             touchstart_bar = w_abs_start*h_abs_start;
-            document.getElementById("start").innerText = `最初の面積：${touchstart_bar}`;
+            
         }
     },false);
       
@@ -35,12 +35,12 @@ function BodyOnLoad() {
             h_abs_move = Math.abs(e.touches[1].pageY - e.touches[0].pageY);
             //ムーブした時の面積
             touchmove_bar = w_abs_move*h_abs_move;
-            document.getElementById("move").innerText = `移動後の面積：${touchmove_bar}`;
+            
             //はじめに2タッチ面積からムーブした時の面積を引く
             area_bar = touchstart_bar-touchmove_bar;
             if(area_bar<0){//拡大する
                 ratio *= 1.1;
-                document.getElementById('test').innerHTML = '<a href="./kidou.html">移動</a>';
+                document.getElementById('test').innerHTML = '<a href="https://www.do-johodai.ac.jp/">拡大</a>';
             }
             else if(area_bar>0){//縮小する
                 ratio *= 0.9;
@@ -55,8 +55,5 @@ function BodyOnLoad() {
 </head>
 <body onLoad="BodyOnLoad()">
 <p id="test" font size="1" >拡大</p>
-<p id="start"></p>
-<p id="move"></p>
-
 </body>
 </html>
