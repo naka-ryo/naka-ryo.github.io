@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0" />
+
+var alert = {
+    title: "ボタンを押した時の処理",
+    icon: "info",
+    buttons: {
+      cancel: "Cancel", // キャンセルボタン
+      ok: true
+    }
+  };
+  
+  swal(alert)
+    // then() メソッドを使えばクリックした時の値が取れます
+    .then(function(val) {
+      if (val) {
+        swal("OKボタンが押されました");
+      } else {
+        swal({
+          text: "キャンセルされました",
+          icon: "warning",
+          timer: 2500 // 2.5秒後に自動的に閉じる
+        });
+      }
+  });
