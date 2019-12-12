@@ -1,0 +1,30 @@
+<html>
+<body>
+    
+    <p><a onmouseover="sound()" onmouseout="mouseout();" href="https://www.do-johodai.ac.jp/">https://www.do-johodai.ac.jp/</a></p>
+    <audio id="sound-file" preload="auto">
+        <source src="alert1.mp3" type="audio/mp3">
+
+        
+    </audio>
+</body>
+ 
+<script>
+   function sound() {
+        document.getElementById( 'sound-file' ).loop = true;
+
+        document.getElementById( 'sound-file' ).play() ;
+    }
+    
+    function mouseout(){
+        document.getElementById( 'sound-file' ).pause();
+    }
+        
+    
+
+
+    
+ 
+</script>
+<a href="https://www.do-johodai.ac.jp/">戻る</a>
+</html>
