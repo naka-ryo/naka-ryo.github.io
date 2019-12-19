@@ -67,10 +67,11 @@ updateProgress(0);
            
  </body>       
 
-      <a href="">キャンセル</a>
+      <a href="#" id="end">キャンセル</a>
       
 
 <script>
+    document.getElementById("end").onclick = function() {
     const endTime = performance.now();
                console.log(`end: ${endTime}`);
                console.log(endTime - startTime);
@@ -81,10 +82,8 @@ updateProgress(0);
               'myPerfStart',
               'myPerfEnd'
           );
-
-          const results = performance.getEntriesByName('myPerf');
-          const time = results[0].duration;
-          console.log( '実行時間 = ' + time + 'ミリ秒' );
+    }
+          
 
 
 
@@ -92,6 +91,6 @@ updateProgress(0);
       
 
 
-</</html>
+</html>
 
 
