@@ -1,0 +1,45 @@
+<html>
+<head>
+     <audio id="sound-file" preload="auto">
+          <source src="error2.mp3" type="audio/mp3">
+     </audio>
+     <script>
+          document.getElementById( 'sound-file' ).loop = true;
+
+          document.getElementById( 'sound-file' ).play();
+
+          performance.mark('myPerfStart');
+          window.onload = function() {
+               const startTime = performance.now();
+               console.log(`start: ${startTime}`);
+               var result = confirm('次の処理を続けますか？');
+               const endTime = performance.now();
+               console.log(`end: ${endTime}`);
+               console.log(endTime - startTime);
+
+               if(result) {
+                  
+                    
+               } else {
+                    //いいえを選んだときの処理
+               }   
+          }
+
+
+          performance.mark('myPerfEnd');
+          
+          performance.measure(
+               'myPerf',
+               'myPerfStart',
+               'myPerfEnd'
+          );
+
+          const results = performance.getEntriesByName('myPerf');
+          const time = results[0].duration;
+          console.log( '実行時間 = ' + time + 'ミリ秒' );
+</script>
+</head>
+<body>
+
+</body>
+</html>

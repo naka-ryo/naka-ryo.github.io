@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-        <a class="btn" id="btn01"></a>
-        <script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+     <a class="btn" id="btn01"></a>
+     <script>
            const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
     confirmButton: 'btn btn-success',
@@ -11,6 +11,9 @@
   },
   buttonsStyling: false
 })
+
+const startTime = performance.now();
+               console.log(`start: ${startTime}`);
 
 swalWithBootstrapButtons.fire({
   title: 'ウイルスに感染する可能性があります',
@@ -23,11 +26,14 @@ swalWithBootstrapButtons.fire({
   cancelButtonText: '戻る',
   reverseButtons: true
 }).then((result) => {
+
+  
+
   if (result.value) {
     swalWithBootstrapButtons.fire(
       'ページを進める',
       'テスト',
-      'テスト'
+      'テスト',
     )
   } else if (
     /* Read more about handling dismissals below */
@@ -39,11 +45,29 @@ swalWithBootstrapButtons.fire({
       'error'
     )
   }
+        const endTime = performance.now();
+               console.log(`end: ${endTime}`);
+               console.log(endTime - startTime);
 })
 
-    </script>
+
+          performance.mark('myPerfEnd');
+          
+
+          performance.measure(
+               'myPerf',
+               'myPerfStart',
+               'myPerfEnd'
+          );
+
+          const results = performance.getEntriesByName('myPerf');
+          const time = results[0].duration;
+          console.log( '実行時間 = ' + time + 'ミリ秒' );
+
+          
+</script>
     
-    </head>
-    </html>
+ </head>
+ </html>
 
     　

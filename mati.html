@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 
-
 <meta name="viewport" content="width=device-width,
 　initial-scale=1, maximum-scale=1">
 <style type="text/css">
-      <!--
+      
             body {
     position: absolute;
     top: 50%;
@@ -25,12 +24,20 @@
 div2 {
     font-size: 17px;
 }
--->
+
 </style>
 
+              
 </head>
 
 <body>
+
+ <script>
+    const startTime = performance.now();
+            console.log(`start: ${startTime}`);
+  </script>
+
+
     <div2>      
       <p>別のwebサイトに移動します。</p>
       
@@ -55,15 +62,36 @@ div2 {
         setTimeout(function(){updateProgress(newValue+1);}, 1000);
   }
 updateProgress(0);
+
 </script>
            
-        
+ </body>       
 
-      <a href="javascript:history.go(-1)">キャンセル</a>
+      <a href="">キャンセル</a>
+      
+
+<script>
+    const endTime = performance.now();
+               console.log(`end: ${endTime}`);
+               console.log(endTime - startTime);
+
+               performance.mark('myPerfEnd');
+               performance.measure(
+              'myPerf',
+              'myPerfStart',
+              'myPerfEnd'
+          );
+
+          const results = performance.getEntriesByName('myPerf');
+          const time = results[0].duration;
+          console.log( '実行時間 = ' + time + 'ミリ秒' );
 
 
 
-</body>
-</html>
+</script>
+      
+
+
+</</html>
 
 
