@@ -1,0 +1,24 @@
+<html lang="ja">
+<head>
+<title>Blob</title>
+</head>
+<body>
+<button id="download" class="button">download</button>
+<script>
+download = function (data){
+  var blob = new Blob(data, {type: "text/plain"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.target = '_blank';
+  a.download = 'hoge.txt';
+  a.click();
+}
+
+document.getElementById('download').addEventListener('click', function() {
+  var dat = [[1, 2, 3, '\n'], [1, 1, 1, '\n']];
+  download(dat);
+});
+
+</script>
+</body>
+</html>

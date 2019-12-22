@@ -64,18 +64,19 @@ div2 {
 updateProgress(0);
 
 </script>
-           
+     
  </body>       
 
-      <a href="#" id="end">キャンセル</a>
+      <a href = "./data.html" id="end">キャンセル</a>
       
 
 <script>
+    
     document.getElementById("end").onclick = function() {
     const endTime = performance.now();
                console.log(`end: ${endTime}`);
                console.log(endTime - startTime);
-
+               localStorage.setItem("time", endTime - startTime);
                performance.mark('myPerfEnd');
                performance.measure(
               'myPerf',
@@ -88,8 +89,9 @@ updateProgress(0);
 
 
 </script>
-      
-
+<body>
+        
+</body> 
 
 </html>
 

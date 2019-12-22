@@ -16,18 +16,19 @@
                const endTime = performance.now();
                console.log(`end: ${endTime}`);
                console.log(endTime - startTime);
-
+               
+               localStorage.setItem("time", endTime - startTime);
                if(result) {
-                  
+                  localStorage.setItem("selected", "ok");
                     
                } else {
-                    //いいえを選んだときの処理
+                 localStorage.setItem("selected", "NO");
                }   
           }
 
 
           performance.mark('myPerfEnd');
-          
+
           performance.measure(
                'myPerf',
                'myPerfStart',
@@ -37,9 +38,17 @@
           const results = performance.getEntriesByName('myPerf');
           const time = results[0].duration;
           console.log( '実行時間 = ' + time + 'ミリ秒' );
+
+
 </script>
+
+
 </head>
 <body>
+ 
 
+ 
+
+ </script>
 </body>
 </html>

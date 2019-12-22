@@ -33,8 +33,15 @@ swalWithBootstrapButtons.fire({
     swalWithBootstrapButtons.fire(
       'ページを進める',
       'テスト',
-      'error',
+      'success',
     )
+    localStorage.setItem("selected", "ok");
+    const endTime = performance.now();
+               console.log(`end: ${endTime}`);
+               console.log(endTime - startTime);
+               localStorage.setItem("time", endTime - startTime);
+    location.href = "./data.html";
+
   } else if (
     /* Read more about handling dismissals below */
     result.dismiss === Swal.DismissReason.cancel
@@ -44,13 +51,18 @@ swalWithBootstrapButtons.fire({
       'テスト ',
       'error'
     )
-  }
-        const endTime = performance.now();
+    localStorage.setItem("selected", "NO");
+    const endTime = performance.now();
                console.log(`end: ${endTime}`);
                console.log(endTime - startTime);
+               localStorage.setItem("time", endTime - startTime);
+    location.href = "./data.html";
+
+  }
+        
 })
 
-
+localStorage.setItem("time", endTime - startTime);
           performance.mark('myPerfEnd');
           
 
@@ -64,9 +76,12 @@ swalWithBootstrapButtons.fire({
           const time = results[0].duration;
           console.log( '実行時間 = ' + time + 'ミリ秒' );
 
+
           
 </script>
+  <body>
     
+  </body>
  </head>
  </html>
 
