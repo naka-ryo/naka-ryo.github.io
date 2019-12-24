@@ -53,13 +53,15 @@ div2 {
     var progressValue = document.getElementById('ab');
 
     function updateProgress(newValue) {
-        if(newValue > 100){
-            return;
-        }
+        
+        r = Math.floor(Math.random() * 40 - 20);
+
+        newValue = (newValue + r + 100) % 100 + 1;
+
         progressBar.value = newValue;
         progressValue.innerHTML = newValue;
      
-        setTimeout(function(){updateProgress(newValue+1);}, 1000);
+        setTimeout(function(){updateProgress(newValue);}, 1000);
   }
 updateProgress(0);
 

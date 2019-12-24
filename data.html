@@ -8,12 +8,14 @@
 <body>
         <a></a>
         <a id="download" download="sample.txt">ダウンロード</a>
+
+        
        
   
 <script>
     var time = localStorage.getItem("time");
     var selected = localStorage.getItem("selected")
-    const blob = new Blob([time, selected], {type: "text/plain"});
+    const blob = new Blob([`${time},${selected}`], {type: "text/plain"});
        
     const a = document.getElementById('download');
        
