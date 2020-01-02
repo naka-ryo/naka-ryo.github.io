@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,
+　initial-scale=1, maximum-scale=1">
+
+
+<body>
+
+
+        <a><font size="6">本研究の"<font color="red" >本当</font>"の目的について</font><br><br>
+             先ほど情報セキュリティに関するアンケート調査を行って頂きましたが，
+             <font color="red" >実際に調査したい内容は，前のページで提示した警告画面に対する反応であります。</font><br>
+             本実験の結果に影響を与える恐れがあったので，実際の目的について先に説明をせずに，
+             実験を行って頂いた次第でございます。申し訳ありませんでした。<br><br>
+             改めまして，卒業研究の一環として，警告画面に関する反応の調査にご協力頂けないでしょうか。<br>
+             この実験内容に同意いただける場合は，恐れ入りますが，下記の指示に従って下さいますようお願いいたします。<br>
+             また，ファイルをダウンロードしてもらいますが，このファイルは，中川が作成しておりますので，<br>
+             このファイルの中身は，あなたが前のページで提示した警告画面で「キャンセル」を押すまでの時間を記録したものです。<br>
+             このデータは，統計的に処理し，個人が特定されないように利用します。<br>
+             
+
+             <br><br><br>
+
+             <font size="5">実験データの送付に同意していただける場合</font><br><br>
+             <font size="4">①ファイルをダウンロードしてください。→ <a id="download" download="研究者用ファイル.txt">ダウンロード</a><br><br>
+                            ②ダウンロードしたファイルを中川のメールアドレスにお送り下さいますようお願いいたします。<br><br>
+                            送り先は，
+                            <font size="5">「s1623092@s.do-johodai.ac.jp」</font>までお願いいたします。
+                            また，ご質問，ご意見がございましたらこのメールアドレスまでお願いします。<br><br></font>
+
+            <font size="5" color="red">実験のご協力ありがとうございました！</font><br><br><br><br>
+
+            <font size="2">北海道情報大学　情報メディア学部　福光ゼミ <br>
+                名前：中川凌太　メールアドレス：s1623092@s.do-johodai.ac.jp</font>
+             
+        </a>
+ 
+<script>
+    var time = localStorage.getItem("time");
+    var selected = localStorage.getItem("selected")
+    const blob = new Blob([`${time},${selected}`], {type: "text/plain"});
+       
+    const a = document.getElementById('download');
+       
+    a.href = window.URL.createObjectURL(blob);
+</script>
